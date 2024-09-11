@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{{ block.super }}{% endblock %}
+
+{% block 'styling' %}
+
+{% endblock  %}
+
+{% block  content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="">
+    </form>
+
+
+    
+{% endblock %}
