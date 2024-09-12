@@ -16,18 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-#from . import views
 
-APP_NAME = 'admin_pov'
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    # Login Page
-    path('',include('inspection_tool.urls')),
-
-    # Paths for the applications of each POV
-    path('admin-pov', include('admin_pov.urls')),
-    path('lead-pov', include('lead_pov.urls')),
-    path('', include('inspector_pov.urls')),
+    path('admin-pov/', include('admin_pov.urls')),
+    path('lead-pov/', include('lead_pov.urls')),
+    path('inspector-pov/', include('inspector_pov.urls')),
+    path('', include('inspection_tool.urls')),  # Ensure this is the last path
 ]
+
